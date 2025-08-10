@@ -8,6 +8,9 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
@@ -26,10 +29,10 @@ jobs:
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          SYMBOL:   ${{ vars.SYMBOL }}
-          TIMEFRAME:${{ vars.TIMEFRAME }}
-          EQUITY:   ${{ vars.EQUITY }}
-          RISK:     ${{ vars.RISK }}
-          MAX_LEV:  ${{ vars.MAX_LEV }}
-          EXCHANGES:${{ vars.EXCHANGES }}
+          SYMBOL: ${{ vars.SYMBOL }}
+          TIMEFRAME: ${{ vars.TIMEFRAME }}
+          EQUITY: ${{ vars.EQUITY }}
+          RISK: ${{ vars.RISK }}
+          MAX_LEV: ${{ vars.MAX_LEV }}
+          EXCHANGES: ${{ vars.EXCHANGES }}
         run: python main.py
