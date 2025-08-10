@@ -2,8 +2,8 @@ name: Telegram Alerts
 
 on:
   schedule:
-    - cron: "*/5 * * * *"   # هر 5 دقیقه اجرا
-  workflow_dispatch:        # اجرای دستی هم ممکن باشد
+    - cron: "*/5 * * * *"   # هر 5 دقیقه
+  workflow_dispatch:        # اجرای دستی
 
 jobs:
   run:
